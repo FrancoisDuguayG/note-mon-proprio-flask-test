@@ -1,11 +1,14 @@
-from flask import Flask
+from flask import Flask, render_template
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
+
+bootstrap = Bootstrap(app)
 
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return render_template("main.html")
 
 
 if __name__ == '__main__':
